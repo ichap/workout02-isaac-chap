@@ -104,8 +104,11 @@ server <- function(input, output) {
       else {
         ggplot(data = modalities()) +
         geom_line(aes(x = year, y = no_contrib, color = "No Contribution")) +
+          geom_point(aes(x = year, y = no_contrib, color = "No Contribution")) +
         geom_line(aes(x = year, y = fixed_contrib, color = "Fixed Contribution")) +
+          geom_point(aes(x = year, y = fixed_contrib, color = "Fixed Contribution")) +
         geom_line(aes(x = year, y = growing_contrib, color = "Growing Contribution")) +
+          geom_point(aes(x = year, y = growing_contrib, color = "Growing Contribution")) +
         labs(x = "Years", y = "Money in Bank", title = "Money made with different saving money methods") +
         theme_minimal() +
         scale_color_manual(name = "Modality", values = c("blue", "red", "green"))
